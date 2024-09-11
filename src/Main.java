@@ -78,5 +78,11 @@ public class Main {
         //trafione
 
         LinkedList<Integer> trafione = new LinkedList<>();
+        for (Integer wpisana:listaLiczbZKlawiatury) {
+            if(listaLiczbWylosowanychBezPowtorzen.contains(wpisana)){
+                trafione.add(wpisana);
+            }
+        }
+        System.out.println(trafione);
     }
 }
