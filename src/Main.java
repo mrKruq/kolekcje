@@ -1,6 +1,11 @@
 import java.util.*;
 
 public class Main {
+    /**
+     * wylosuj liste - losuje liste liczb calkowitych z zakresu 1,100
+     * @param ileElementow - liczba wylosowanych elementow
+     * @return -Array z liczbami wylosowanym
+     */
     private static ArrayList<Integer> wylosujListe(int ileElementow){
         ArrayList<Integer> listaLiczbWylosowanychBezPowtorzen = new ArrayList<>();
         for (int i = 0; i < ileElementow; i++) {
@@ -12,6 +17,10 @@ public class Main {
         }
         return listaLiczbWylosowanychBezPowtorzen;
     }
+
+    /**
+     * @param listaDoWypisania
+     */
     private static void wypiszListe(List<Integer> listaDoWypisania){
         System.out.println("Wypisywana lista:");
         for (int i = 0; i < listaDoWypisania.size(); i++) {
@@ -42,6 +51,11 @@ public class Main {
 
 
     public static void main(String[] args) {
-
+        ArrayList<Integer> losowe = wylosujListe(6);
+        wypiszListe(losowe);
+        ArrayList<Integer> wpisane = wstawLiczbyDoListy(6);
+        wypiszListe(wpisane);
+        LinkedList<Integer> trafione = zwrocElementyZObuList(losowe,wpisane);
+        wypiszListe(trafione);
     }
 }
